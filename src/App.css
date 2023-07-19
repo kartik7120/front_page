@@ -1,10 +1,3 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +32,189 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+  margin-top: auto;
+}
+
+.waveAnimation .waveMiddle {
+  animation: 10000ms linear 0ms infinite normal none running move_wave;
+}
+
+.waveBottom {
+  background-size: 50% 100px;
+}
+
+.waveMiddle {
+  background-size: 50% 120px;
+}
+
+.waveAnimation .waveBottom {
+  animation: move_wave infinite linear infinite;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: move_wave;
+}
+
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: move-wave;
+  -webkit-animation: move-wave 3s;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: move-wave;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.waveTop {
+  background-size: 50% 100px;
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 50%;
+  bottom: -1px;
+}
+
+.bgBottom {
+  z-index: 1;
+}
+
+.bgMiddle {
+  z-index: 2;
+  opacity: 0.75;
+}
+
+.bgTop {
+  z-index: 3;
+  opacity: 0.5;
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+#headerC {
+  transition: all 300ms ease-in-out;
+}
+
+/* .masthead {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  padding-top: 150px;
+  color: white;
+  background: linear-gradient(to right, #00031d, #000536);
+  background-attachment: fixed;
+} */
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.fadeImage {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.bigText {
+  opacity: 0;
+  animation-name: leftToRightText;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.smallText {
+  opacity: 0;
+  animation-name: leftToRightText;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes leftToRightText {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.buttonContainer {
+  opacity: 0;
+  animation-name: fadeUp;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

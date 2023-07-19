@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'gradientStart': '#000218',
+        'gradientEnd': '#00042A',
+      }
+    },
   },
   plugins: [],
 }
